@@ -1,0 +1,67 @@
+#calculator {
+    button {
+        cursor: pointer;
+        position: relative;
+        // background: #55df93;
+        background: linear-gradient(135deg, #eb3cc5, #2f58df);
+        // background: linear-gradient(135deg, #eb3cc5, #55df93);
+
+        font-size: 30px;
+        border: 1px solid rgb(228, 218, 228);
+        
+        &:nth-child(18) {
+            grid-column: 1 / span 2;
+            &::before {
+                width: 200px;
+            }
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            
+            @keyframes back-ground {
+                0% {
+                    background-position: -450%;
+                }
+                
+                100% {
+                    background-position: 450%;
+                }
+            }
+            
+            &:nth-child(1) {
+                background: linear-gradient(135deg, #20c3ec, #3070e7, #3313c4, #9213c4, #c413b5, #20c3ec);
+                background-position: 170%;
+                background-size: 450%;
+                filter: blur(30px);
+                opacity: 0.8;
+                &:hover {
+                    opacity: 1;
+                    animation: back-ground 4s linear infinite alternate;
+                }
+            }
+
+            &:nth-child(2) {
+                pointer-events: none;
+                background: white;
+                opacity: 0.3;
+                filter: blur(15px);
+            }
+            
+        }    
+        
+    }
+
+    .pushed {
+        background: black;
+        color: white;
+        span {
+            opacity: 0;
+        }
+    }
+}
