@@ -143,7 +143,6 @@ class Button extends React.Component {
 
         if (app.state.op) {
             eval(`currentNum = ${Number(app.state.left)} ${app.state.op} ${Number(right)}`);
-            // console.log(app.state.left, app.state.op, right, currentNum);
         }
 
         app.setState({
@@ -175,10 +174,13 @@ class Button extends React.Component {
     }
 
     commonClickEvent() {
+        //ボタンを押すと一瞬黒くなる
         this.setState({ className: "pushed" });
         setTimeout(() => {
             this.setState({ className: null });
         }, 200);
+        //
+
         this.app.setState({
             pushedButton: this
         });
