@@ -26,7 +26,9 @@ class Button extends React.Component {
         } else {
             this.type = "other"
         }
-        switch (this.type) {
+        // switch文にdefaltがないことによる警告を無効化
+        // eslint-disable-next-line
+        switch (this.type) { 
             case "number":
                 this.clickEvent = this.pushNumber;
                 break;
@@ -34,6 +36,8 @@ class Button extends React.Component {
                 this.clickEvent = this.operation;
                 break;
             case "other":
+                // switch文にdefaltがないことによる警告を無効化
+                // eslint-disable-next-line
                 switch (this.value) {
                     case "C":
                         this.clickEvent = this.clear;
@@ -142,6 +146,8 @@ class Button extends React.Component {
         }
 
         if (app.state.op) {
+            //eval関数の使用による警告を無効化
+            // eslint-disable-next-line
             eval(`currentNum = ${Number(app.state.left)} ${app.state.op} ${Number(right)}`);
         }
 

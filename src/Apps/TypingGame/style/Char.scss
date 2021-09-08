@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+#typing-game {
+    ul {
+        // $textColor: #00b3ff;
+        // $textColor: #60d1da;
+        // $textColor: hsl(167, 100%, 40%);
+        // --text-color: hsl(359, 100%, 40%);
+
+        font-family: 'Bad Script', cursive;
+        li {
+            color: #222;
+            
+            &.typed {
+                position: relative;
+                color: #fff;
+                filter: blur(1px);
+                text-shadow: 0 0 10px var(--text-color),
+                            0 0 20px var(--text-color),
+                            0 0 40px var(--text-color),
+                            0 0 80px var(--text-color),
+                            0 0 120px var(--text-color),
+                            0 0 140px var(--text-color);
+            }
+        }
+    }
+}
